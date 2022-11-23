@@ -1,7 +1,8 @@
 import unittest
 from tramdata import *
 
-TRAM_FILE = 'DATA/tramnetwork.json'
+
+TRAM_FILE = 'DATA/TRAMNETWORK.json'
 
 class TestTramData(unittest.TestCase):
 
@@ -21,4 +22,3 @@ class TestTramData(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
