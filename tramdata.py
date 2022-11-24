@@ -2,8 +2,6 @@ import sys
 import DATA
 import json
 import math
-import unittest
-from harversine import harversine, unit
 
 TRAMSTOPS = 'DATA/tramstops.json'
 TRAMLINES = 'DATA/tramlines.txt'
@@ -21,6 +19,7 @@ def build_tram_stops(jsonobject):
         dict_stops[key] = {'lat': lat, 'lon': lon}
 
     return dict_stops
+
 
 def get_stop_and_time (line):
     ## Extract data
@@ -85,40 +84,50 @@ def build_tram_network():
     return tramnetwork_dict
 
 def lines_via_stops(somedicts, stops):
-    list_of_lines = []
-    
+
     with open(somedicts,'r') as f:
         d = json.load(f)
 
-    keys = [key for key, value in d['lines'].items() if stops in value]
-    list_of_lines.append(keys)
+    if stops not in d['stops']:
+        return None
     
-    return list_of_lines
+    keys = [key for key, value in d['lines'].items() if stops in value]
+    return keys
 
 def lines_between_stops(somedicts, stop1, stop2):
     with open(somedicts, 'r') as f:
         d = json.load(f)
-
+    if (stop1 and stop2) not in d['stops']:
+        return None
     list_of_lines = []
 
     keys = [key for key, value in d['lines'].items() if stop1 in value and stop2 in value]
-    list_of_lines.append(keys)
+    for key in keys:
+        if key not in list_of_lines:
+            list_of_lines.append(key)
     return list_of_lines
     
 
 def time_between_stops(somedicts, line, stop1, stop2):
     with open(somedicts, 'r') as f:
         d = json.load(f)
+
+    if str(line) not in d["lines"]:
+        return None
+    
     linestops = d["lines"][str(line)]
     stopslist = []
 
-    for entries in linestops:
-        if stop1 in stopslist and stop2 in stopslist:
-            break
-        if entries == stop1 or entries == stop2:
-            stopslist.append(entries)
-        elif len(stopslist) != 0:
-            stopslist.append(entries)
+    if (stop1 and stop2) in linestops:
+        for entries in linestops:
+            if stop1 in stopslist and stop2 in stopslist:
+                break
+            if entries == stop1 or entries == stop2:
+                stopslist.append(entries)
+            elif len(stopslist) != 0:
+                stopslist.append(entries)
+    else:
+        return None
 
 
     time = 0
@@ -137,8 +146,18 @@ def time_between_stops(somedicts, line, stop1, stop2):
 def distance_between_stops(somedicts, stop1, stop2):
     with open(somedicts, "r") as f:
         d = json.load(f)
-    dist = harversine((d["stops"][stop1]["lat"],d["stops"][stop1]["lon"]), (d["stops"][stop2]["lat"],d["stops"][stop2]["lon"]))
-    return dist
+    if (stop1 and stop2) not in d['stops']:
+        return None
+    R = 6371 #radius of earth in kilometers
+    lat1 = math.radians(float(d["stops"][stop1]["lat"]))
+    lon1 = math.radians(float(d["stops"][stop1]["lon"]))
+    lat2 = math.radians(float(d["stops"][stop2]["lat"]))
+    lon2 = math.radians(float(d["stops"][stop2]["lon"]))
+    mean_lat = (lat1 + lat2)/2
+    c = math.sqrt(math.pow((lat2-lat1),2)+math.pow((math.cos(mean_lat)*(lon2-lon1)),2))
+    return c*R
+
+
 
 
 def answer_query(input_str):
@@ -158,13 +177,12 @@ def answer_query(input_str):
         answer = lines_via_stops(TRAMNETWORK, string1[4:])
 
     
-    if input_str[0:7] == "between":
+    if input_str[0:8] == "between ":
 
         stop1 = input_str.index(" and ")
         string1 = input_str[8:stop1]
         string2 = input_str[stop1+5:]
         answer = lines_between_stops(TRAMNETWORK, string1, string2)
-        print(answer)
     
     if input_str[0:10] == 'time with ':
 
@@ -175,18 +193,20 @@ def answer_query(input_str):
         string2 = input_str[stop2+4:]
 
         answer = time_between_stops(TRAMNETWORK, line, string1, string2)
-    if input_str[0:14] == "distance from ":
 
+    if input_str[0:14] == "distance from ":
+                
         stop1 = input_str.index(" to ")
         string1 = input_str[14:stop1]
         string2 = input_str[stop1+4:]
+
 
         answer = distance_between_stops(TRAMNETWORK, string1, string2)
 
 
     
-    if answer == None or answer == [[]]:
-        return "bad argument"
+    if answer == None or answer == []:
+        return "Bad Argument"
 
     else:
         return answer
@@ -194,13 +214,13 @@ def answer_query(input_str):
 def dialogue():
     while True:
         try:
-            input_str = input("> ")
-            if input == "exit":
+            input_str = input("> ").strip()
+            if input_str == "exit":
                 break
             else:
                 answer = answer_query(input_str)
                 print(answer)
-        except: 
+        except ValueError: 
             "sorry, try again"
 
     exit()
