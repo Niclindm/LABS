@@ -74,13 +74,6 @@ class TestTramData(unittest.TestCase):
                     self.assertLess(distance, 20.0)
                     duplicates.append((stop2, stop1))
 
-
-
-        
-
-
-
-
 if __name__ == '__main__':
     unittest.main()
 
