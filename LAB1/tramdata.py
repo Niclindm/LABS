@@ -3,9 +3,9 @@ sys.path.append('LABS/DATA/')
 import json
 import math
 
-TRAMSTOPS = 'DATA/tramstops.json'
-TRAMLINES = 'DATA/tramlines.txt'
-TRAMNETWORK = 'DATA/tramnetwork.json'
+TRAMSTOPS = 'LABS/DATA/tramstops.json'
+TRAMLINES = 'LABS/DATA/tramlines.txt'
+TRAMNETWORK = 'LABS/DATA/tramnetwork.json'
 
 
 def build_tram_stops(jsonobject):
