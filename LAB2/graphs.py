@@ -9,13 +9,12 @@ class Graph:
         self._adjlist = {}
         self._valuelist = {}
         if edgelist:
-            for a, b in edgelist:
-                self.add_edge(a,b)
-            # for items in edgelist:
-            #     self.add_edge(items[0],items[1])
-            #     for item in items:
-            #         if item not in self._valuelist.keys():
-            #             self._valuelist[item] = None
+            for items in edgelist:
+                self.add_vertex(items[0])
+                self.add_vertex(items[1])
+                if items not in self.edges():
+                    self.add_edge(items[0],items[1])
+
 
 
 
@@ -25,18 +24,12 @@ class Graph:
 
 
     def add_edge(self, a, b):
-        if a in self._adjlist:
-            self._adjlist[a].add(b)
-        else:
-            self._adjlist[a] = {b}
-        if b in self._adjlist:
-            self._adjlist[b].add(a)
-        else:
-            self._adjlist[b] = {a}
-        if a not in self._valuelist:
-            self._valuelist[a] = {}
-        if b not in self._valuelist:
-            self._valuelist[b] = {}
+
+        self.add_vertex(a)
+        self.add_vertex(b)
+        self._adjlist[a][b] = dict()
+        self._adjlist[b][a] = dict()
+
 
     def add_vertex(self, a):
         if a not in self._adjlist:
@@ -45,7 +38,6 @@ class Graph:
 
         
     def edges(self):
-        "Lists all edges in one direction, a <= b"
         eds = []
         for a in self._adjlist.keys():
             for b in self._adjlist[a]:
@@ -168,7 +160,6 @@ def dijkstra(graph, source, cost=lambda u,v: WeightedGraph.get_weight(u,v)):
                 path[vertex] = path_list
 
     final_dict = {vertex: {'dist': dist[vertex], 'path': path[vertex]} for vertex in graph.vertices() if vertex != source} 
-    print(final_dict)
     return final_dict
 
                 
@@ -201,7 +192,8 @@ def visualize(graph, view='dot', name='mygraph', colors=None):
 
 def view_shortest(G, source, target, cost=lambda u,v: 1):
     path = dijkstra(G, source, cost)[target]['path']
-    print(path)
+    dist = dijkstra(G, source, cost)[target]['dist']
+    print(f"\n Travel takes: {dist} mins trough the shortest path: {path}\n")
     # colormap = {str(v): 'orange' for v in path}
     colors = lambda stop: 'orange' if stop in path else 'white'
 
@@ -215,8 +207,7 @@ def demo():
     # visualize(G)
 
     G = WeightedGraph([(1,2),(1,3),(1,4),(3,4),(3,5),(3,6), (3,7), (6,7)])
-    G.set_weight(1,3,4)
-    print(G)    
+    # G.set_weight(1,3,4)
     view_shortest(G, 2, 6)
 if __name__ == '__main__':
     demo()
