@@ -1,211 +1,165 @@
-from math import inf
+import graphs as graphs
+import json
 import sys
-
 import graphviz
+sys.path.append('LABS/LAB1')
+import tramdata as td
+
+TRAM_FILE = 'DATA/tramnetwork.json'
+
+class TramNetwork(graphs.WeightedGraph):
 
 
-class Graph:
-    def __init__(self, edgelist=None): #a edgelist of form (vertex1, vertex2)
-        self._adjlist = {}
-        self._valuelist = {}
-        if edgelist:
-            for items in edgelist:
-                self.add_vertex(items[0])
-                self.add_vertex(items[1])
-                if items not in self.edges():
-                    self.add_edge(items[0],items[1])
+    def __init__(self, lines, stops, times):
+        super().__init__()
+        self._linedict = {}
+        self._stopdict = {}
+        self._timedict = {}
+        if lines: 
+            for line in lines:
+                self._linedict[line] = TramLine(line, lines[line])
+        if stops:
+            for stop in stops:
+                lines_via_stop = td.lines_via_stop(TRAM_FILE, stop)
+                self._stopdict[stop] = TramStop(stop, lines=lines_via_stop, lat=stops[stop]['lat'], lon=stops[stop]['lon'])
+        if times:
+            self._timedict = times
+        for stops in self.all_stops():
+            self.add_vertex(stop)
 
+        for stop in self._timedict:
+            for connected_stop in self._timedict[stop]:
+                self.add_edge(stop, connected_stop)
+                self.set_weight(stop, connected_stop, self.transition_time(stop, connected_stop))
 
+    def all_lines(self):
+        return list(self._linedict.keys())
 
+    def all_stops(self):
+        return list(self._stopdict.keys())
 
-    def __len__(self):
-        return len(self._adjlist.keys())
-
-
-
-    def add_edge(self, a, b):
-
-        self.add_vertex(a)
-        self.add_vertex(b)
-        self._adjlist[a][b] = dict()
-        self._adjlist[b][a] = dict()
-
-
-    def add_vertex(self, a):
-        if a not in self._adjlist:
-            self._adjlist.update({a : {}}) 
-            self._valuelist.update({a: {}})
-
-        
-    def edges(self):
-        eds = []
-        for a in self._adjlist.keys():
-            for b in self._adjlist[a]:
-                if a <= b:
-                    eds.append((a, b))
-        return eds
-
-    def get_vertex_value(self, v):
-        return self._valuelist[v]
-
-    def neighbors(self, v):
-        neighbor_list = []
-        for value in self._adjlist[v]:
-            neighbor_list.append(value)
-        return neighbor_list
-
-    def remove_edge(self, a, b):
-        for keys in self._adjlist.keys():
-            if a == keys or b == keys:
-                for item in list(self._adjlist[keys]):
-                    if a == item or b == item:
-                        self._adjlist[keys].remove(item)
-
-
-    def remove_vertex(self, v):
-        if v in self._adjlist:
-            self._adjlist.pop(v, None)
-        if v in self._valuelist:
-            self._valuelist.pop(v, None)
-        for keys in self._adjlist.keys():
-            for item in list(self._adjlist[keys]):
-                if v == item:
-                    self._adjlist[keys].remove(item)
-                    self._valuelist[keys].remove(item)
-
-        
-
-    def set_vertex_value(self, v, x):
-        self._valuelist[v] = {x}
-
-    def vertices(self):
-        "Lists all vertices."
-        return list(self._adjlist.keys())
-        
-    def __str__(self):
-        return str(self._adjlist)
-
-class WeightedGraph(Graph):
-
-    def __init__(self, start=None):
-        super().__init__(start)
-        if start:
-            self._weightedlist = {(a,b) : None for a,b in start}
-        else:
-            self._weightedlist = {}
-
-    def get_weight(self, a, b):
-        return self._weightedlist[(a,b)]
-
-    def set_weight(self, a, b, w):
-        if (a,b) in self._weightedlist.keys():
-            self._weightedlist[a,b] = w
-        elif (b,a) in self._weightedlist.keys():
-            self._weightedlist[b,a] = w
-        elif (a, b) in self.edges() or (b,a) in self.edges():
-            self._weightedlist[(a,b)] = w
-
-
-    def __str__(self):
-        return str(self._weightedlist)
-
-def costs2attributes(G, cost, attr='weight'):
-    for a, b in G.edges():
-        G[a][b][attr] = cost(a, b)
-
-
-
-def dijkstra(graph, source, cost=lambda u,v: WeightedGraph.get_weight(u,v)):
-    q = []
-    prev = {}
-    dist = {}
-    for v in graph.vertices():
-        dist[v] = 9999999
-        prev[v] = []
-        q.append(v)
-    dist[source] = 0
-
-
-    while q:
-        temp = 99999999
-        for i in q: 
-            if dist[i] < temp:
-                temp = dist[i]
-                u = i
-        q.remove(u)
-
-        for neighbor in graph.neighbors(u):
-            if neighbor in q:
-                alt = dist[u] + cost(u, neighbor)
-                if alt < dist[neighbor]:
-                    dist[neighbor] = alt
-                    prev[neighbor] = u
+    def extreme_positions(self):
+        temp_min_lat = 100000
+        temp_max_lat = 0
+        temp_min_lon = 100000
+        temp_max_lon = 0
+        for stop in self._stopdict.keys():
+            if self._stopdict[stop]['lat'] > temp_max_lat:
+                temp_max_lat = self._stopdict[stop]['lat']
+            if self._stopdict[stop]['lat'] < temp_min_lat:
+                temp_min_lat = self._stopdict[stop]['lat']
+            if self._stopdict[stop]['lon'] > temp_max_lon:
+                temp_max_lon = self._stopdict[stop]['lon']
+            if self._stopdict[stop]['lon'] < temp_min_lon:
+                temp_min_lon = self._stopdict[stop]['lon']
+        extreme_pos = {
+        'max_lon': temp_max_lon, 
+        'max_lat': temp_max_lat, 
+        'min_lon': temp_min_lon, 
+        'min_lat': temp_min_lat
+        }
+        return extreme_pos
     
-    path = dict()
-    for vertex in graph.vertices():
-        if vertex != source:
-            p = True
-            v = vertex
-            path_list = list()
-            while v != source:
-                if v in prev:
-                    path_list.append(v)
-                    v = prev[v]
-                else:
-                    p = False
-                    break
-            if p:
-                path_list.append(source)
-                path_list.reverse()
-                path[vertex] = path_list
-
-    final_dict = {vertex: {'dist': dist[vertex], 'path': path[vertex]} for vertex in graph.vertices() if vertex != source} 
-    print(final_dict)
-    return final_dict
-
-                
-
-
-
-
-def visualize(graph, view='dot', name='mygraph', colors=None):
-    dot = graphviz.Graph(engine='fdp', graph_attr={'size': '12,12'})
-
-    for v in graph.vertices():
-        if colors:
-            col = colors(v)
+    def geo_distance(self, a, b):
+        D = td.distance_between_stops(str(a),str(b))
+        if D:
+            return round(D)
         else:
-            col = 'white'
-        dot.node(
-            str(v),
-            label=str(v),
-            shape='rectangle',
-            fontsize='8pt',
-            width='0.4',
-            height='0.05',
-            fillcolor=col, style='filled'
-            )
-        
+            print("bad argument")
 
-    for (a,b) in graph.edges():
-        dot.edge(str(a),str(b))
-    dot.render('mygraph.gv', view=True)
+    def lines_stops(self, line):
+        if str(line) in list(self._linedict.keys()):
+            return self._linedict[str(line)].get_stops()
 
-def view_shortest(G, source, target, cost=lambda u,v: 1):
-    path = dijkstra(G, source, cost)[target]['path']
-    print(path)
-    colors = lambda stop: 'orange' if stop in path else 'white'
+    
+    def stop_lines(self, a):
+        if a in self.all_stops():
+            return a.get_lines()
 
-    visualize(G, view='view', colors=colors)
+
+    def stop_position(self, a):
+        if a in self.all_stops():
+            return a.get_position()
+
+
+    def transition_time(self, a, b):
+        try:
+            if self._timedict[a][b]:
+                return self._timedict[a][b]
+        except:
+            print("not adjecent")
+
+
+
 
 
     
+
+class TramLine():
+    def __init__(self, num, stops):
+        if num:
+            self._number = str(num)
+        else: 
+            self._number = str()
+        if stops:
+            self._stops = stops
+        else:
+            self._stops = [] 
+
+    def get_stops(self):
+        return self._stops
+
+    def get_number(self):
+        return self._number
+
+
+class TramStop():
+    def __init__(self, name, lines=[], lat=None, lon=None):
+        if name:
+            self._name = str(name)
+
+            self._lines = lines
+
+            if (lat and lon) != None:
+                self._postition = tuple((lat, lon))
+            else:
+                self._postition = tuple()
+
+        else: 
+            print("requies name argument")
+
+    
+    def add_line(self, line):
+        if str(line) not in self._lines:
+            self._lines.append(str(line))
+
+    def get_lines(self):
+        return self._lines
+
+    def get_name(self):
+        return self._name
+
+    def get_position(self):
+        if self._postition:
+            return self._postition
+
+    def set_position(self, lat, lon):
+        if (lat and lon) != None:
+            self._postition = tuple(lat, lon)
+
+def readTramNetwork(tramfile=TRAM_FILE):
+    with open(tramfile, 'r') as f:
+        d = json.load(f)
+    lines = d['lines']
+    stops = d['stops']
+    times = d['times']
+    return TramNetwork(lines, stops, times)
+
 
 def demo():
+    G = readTramNetwork(TRAM_FILE)
+    a, b = input('from,to ').split(',')
+    graphs.view_shortest(G, a, b)
 
-    G = WeightedGraph([(1,2),(1,3),(1,4),(3,4),(3,5),(3,6), (3,7), (6,7)])
-    G.set_weight(1,3,4)
-    print(G)    
-    view_shortest(G, 2, 6)
 if __name__ == '__main__':
     demo()
