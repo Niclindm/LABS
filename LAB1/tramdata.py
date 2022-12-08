@@ -223,7 +223,7 @@ def dialogue():
         except ValueError: 
             "sorry, try again"
 
-    exit()
+    quit()
 
 
 
