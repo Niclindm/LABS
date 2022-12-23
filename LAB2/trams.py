@@ -2,7 +2,7 @@ import graphs as graphs
 import json
 import sys
 import graphviz
-sys.path.append('/Users/nick/Desktop/LABS/LAB1')
+sys.path.append('/Users/nick/LABS/LAB1')
 import tramdata as td
 
 TRAM_FILE = 'DATA/tramnetwork.json'

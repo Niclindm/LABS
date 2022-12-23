@@ -1,0 +1,286 @@
+graph {
+	graph [size="12,12"]
+	"Fjällgatan" [label="Fjällgatan" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Östra Sjukhuset" [label="Östra Sjukhuset" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Tingvallsvägen" [label="Tingvallsvägen" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Kaggeledstorget [label=Kaggeledstorget fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Ättehögsgatan" [label="Ättehögsgatan" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Munkebäckstorget" [label="Munkebäckstorget" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Härlanda" [label="Härlanda" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Solrosgatan [label=Solrosgatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Stockholmsgatan [label=Stockholmsgatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Redbergsplatsen [label=Redbergsplatsen fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Olskrokstorget [label=Olskrokstorget fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Svingeln [label=Svingeln fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Ullevi Norra" [label="Ullevi Norra" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Centralstationen [label=Centralstationen fillcolor=orange fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Ullevi Södra" [label="Ullevi Södra" fillcolor=orange fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Brunnsparken [label=Brunnsparken fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Gamlestads Torg" [label="Gamlestads Torg" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Lilla Bommen" [label="Lilla Bommen" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Stenpiren [label=Stenpiren fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Domkyrkan [label=Domkyrkan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Nordstan [label=Nordstan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Kungsportsplatsen [label=Kungsportsplatsen fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Järntorget" [label="Järntorget" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Prinsgatan [label=Prinsgatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Hagakyrkan [label=Hagakyrkan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Masthuggstorget [label=Masthuggstorget fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Olivedalsgatan [label=Olivedalsgatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Linnéplatsen" [label="Linnéplatsen" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Botaniska Trädgården" [label="Botaniska Trädgården" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Marklandsgatan [label=Marklandsgatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Sahlgrenska Huvudentré" [label="Sahlgrenska Huvudentré" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Axel Dahlströms Torg" [label="Axel Dahlströms Torg" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Bokekullsgatan [label=Bokekullsgatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Lantmilsgatan [label=Lantmilsgatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Nymilsgatan [label=Nymilsgatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Musikvägen" [label="Musikvägen" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Positivgatan [label=Positivgatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Frölunda Torg Spårvagn" [label="Frölunda Torg Spårvagn" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Briljantgatan [label=Briljantgatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Smaragdgatan [label=Smaragdgatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Opaltorget [label=Opaltorget fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Mölndals Innerstad" [label="Mölndals Innerstad" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Mölndals sjukhus" [label="Mölndals sjukhus" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Lackarebäck" [label="Lackarebäck" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Krokslätts Fabriker" [label="Krokslätts Fabriker" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Krokslätts torg" [label="Krokslätts torg" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Lana [label=Lana fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Varbergsgatan [label=Varbergsgatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Elisedal [label=Elisedal fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Almedal [label=Almedal fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Liseberg Södra" [label="Liseberg Södra" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Korsvägen" [label="Korsvägen" fillcolor=orange fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Scandinavium [label=Scandinavium fillcolor=orange fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Berzeliigatan [label=Berzeliigatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Chalmers [label=Chalmers fillcolor=orange fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Grönsakstorget" [label="Grönsakstorget" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Vasaplatsen [label=Vasaplatsen fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Vasa Viktoriagatan" [label="Vasa Viktoriagatan" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Valand [label=Valand fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Kapellplatsen [label=Kapellplatsen fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Handelshögskolan" [label="Handelshögskolan" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Brunnsgatan [label=Brunnsgatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Seminariegatan [label=Seminariegatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Högsbogatan" [label="Högsbogatan" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Klintens Väg" [label="Klintens Väg" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Godhemsgatan [label=Godhemsgatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Mariaplan [label=Mariaplan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Ekedal [label=Ekedal fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Ostindiegatan [label=Ostindiegatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Vagnhallen Majorna" [label="Vagnhallen Majorna" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Sannaplan [label=Sannaplan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Jaegerdorffsplatsen [label=Jaegerdorffsplatsen fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Chapmans Torg" [label="Chapmans Torg" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Kaptensgatan [label=Kaptensgatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Stigbergstorget [label=Stigbergstorget fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Sanatoriegatan [label=Sanatoriegatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Virginsgatan [label=Virginsgatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Hjällbo" [label="Hjällbo" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Ejdergatan [label=Ejdergatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	SKF [label=SKF fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Hammarkullen [label=Hammarkullen fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Storås" [label="Storås" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Angered Centrum" [label="Angered Centrum" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Welandergatan [label=Welandergatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Töpelsgatan" [label="Töpelsgatan" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Bögatan" [label="Bögatan" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Ekmanska [label=Ekmanska fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Bäckeliden" [label="Bäckeliden" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Sankt Sigfrids Plan" [label="Sankt Sigfrids Plan" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Liseberg Station" [label="Liseberg Station" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Frihamnen [label=Frihamnen fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Hjalmar Brantingsplatsen" [label="Hjalmar Brantingsplatsen" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Vågmästareplatsen" [label="Vågmästareplatsen" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Wieselgrensplatsen [label=Wieselgrensplatsen fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Rambergsvallen [label=Rambergsvallen fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Gropegårdsgatan" [label="Gropegårdsgatan" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Eketrägatan" [label="Eketrägatan" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Sälöfjordsgatan" [label="Sälöfjordsgatan" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Vårväderstorget" [label="Vårväderstorget" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Mildvädersgatan" [label="Mildvädersgatan" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Önskevädersgatan" [label="Önskevädersgatan" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Friskväderstorget" [label="Friskväderstorget" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Väderilsgatan" [label="Väderilsgatan" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Temperaturgatan [label=Temperaturgatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Varmfrontsgatan [label=Varmfrontsgatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Aprilgatan [label=Aprilgatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Allhelgonakyrkan [label=Allhelgonakyrkan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Kortedala Torg" [label="Kortedala Torg" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Januarigatan [label=Januarigatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Runstavsgatan [label=Runstavsgatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Nymånegatan" [label="Nymånegatan" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Beväringsgatan" [label="Beväringsgatan" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Kviberg [label=Kviberg fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Bellevue [label=Bellevue fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Wavrinskys Plats" [label="Wavrinskys Plats" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Medicinaregatan [label=Medicinaregatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Komettorget [label=Komettorget fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Rymdtorget Spårvagn" [label="Rymdtorget Spårvagn" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Teleskopgatan [label=Teleskopgatan fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Galileis Gata" [label="Galileis Gata" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Sandarna [label=Sandarna fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Kungssten [label=Kungssten fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Doktor Sydows Gata" [label="Doktor Sydows Gata" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Doktor Fries Torg" [label="Doktor Fries Torg" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Saltholmen [label=Saltholmen fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Roddföreningen" [label="Roddföreningen" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Långedrag" [label="Långedrag" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Hinsholmen [label=Hinsholmen fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Käringberget" [label="Käringberget" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Tranered [label=Tranered fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Hagen [label=Hagen fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Nya Varvsallén" [label="Nya Varvsallén" fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	Majvallen [label=Majvallen fillcolor=white fontsize="16pt" height=0.10 shape=rectangle style=filled width=0.8]
+	"Fjällgatan" -- Majvallen
+	"Fjällgatan" -- Stigbergstorget
+	"Tingvallsvägen" -- "Östra Sjukhuset"
+	Kaggeledstorget -- "Tingvallsvägen"
+	Kaggeledstorget -- "Ättehögsgatan"
+	"Munkebäckstorget" -- "Ättehögsgatan"
+	"Munkebäckstorget" -- Solrosgatan
+	"Härlanda" -- "Munkebäckstorget"
+	"Härlanda" -- Stockholmsgatan
+	"Härlanda" -- Solrosgatan
+	Redbergsplatsen -- Stockholmsgatan
+	Olskrokstorget -- Redbergsplatsen
+	Olskrokstorget -- Svingeln
+	Svingeln -- "Ullevi Norra"
+	"Ullevi Norra" -- "Ullevi Södra"
+	Centralstationen -- "Ullevi Norra"
+	Centralstationen -- "Gamlestads Torg"
+	Centralstationen -- "Lilla Bommen"
+	Centralstationen -- "Ullevi Södra"
+	Brunnsparken -- Centralstationen
+	Brunnsparken -- Stenpiren
+	Brunnsparken -- Domkyrkan
+	Brunnsparken -- "Lilla Bommen"
+	Brunnsparken -- Nordstan
+	Brunnsparken -- Kungsportsplatsen
+	"Gamlestads Torg" -- "Hjällbo"
+	"Gamlestads Torg" -- SKF
+	Domkyrkan -- "Grönsakstorget"
+	Kungsportsplatsen -- Valand
+	"Järntorget" -- Stenpiren
+	"Järntorget" -- Prinsgatan
+	"Järntorget" -- Masthuggstorget
+	Hagakyrkan -- "Järntorget"
+	Hagakyrkan -- "Vasa Viktoriagatan"
+	Masthuggstorget -- Stigbergstorget
+	Olivedalsgatan -- Prinsgatan
+	Olivedalsgatan -- Seminariegatan
+	"Linnéplatsen" -- Olivedalsgatan
+	"Linnéplatsen" -- "Sahlgrenska Huvudentré"
+	"Botaniska Trädgården" -- "Linnéplatsen"
+	"Botaniska Trädgården" -- Marklandsgatan
+	"Botaniska Trädgården" -- "Sahlgrenska Huvudentré"
+	"Axel Dahlströms Torg" -- Marklandsgatan
+	"Axel Dahlströms Torg" -- Lantmilsgatan
+	Bokekullsgatan -- Marklandsgatan
+	Bokekullsgatan -- "Högsbogatan"
+	Lantmilsgatan -- Nymilsgatan
+	"Musikvägen" -- Nymilsgatan
+	"Musikvägen" -- Positivgatan
+	"Frölunda Torg Spårvagn" -- Positivgatan
+	Briljantgatan -- "Frölunda Torg Spårvagn"
+	Briljantgatan -- Smaragdgatan
+	Opaltorget -- Smaragdgatan
+	"Mölndals Innerstad" -- "Mölndals sjukhus"
+	"Lackarebäck" -- "Mölndals sjukhus"
+	"Krokslätts Fabriker" -- "Lackarebäck"
+	"Krokslätts Fabriker" -- "Krokslätts torg"
+	"Krokslätts torg" -- Lana
+	Lana -- Varbergsgatan
+	Elisedal -- Varbergsgatan
+	Almedal -- Elisedal
+	Almedal -- "Liseberg Södra"
+	"Korsvägen" -- "Liseberg Södra"
+	"Korsvägen" -- Scandinavium
+	"Korsvägen" -- "Liseberg Station"
+	Scandinavium -- "Ullevi Södra"
+	Berzeliigatan -- "Korsvägen"
+	Berzeliigatan -- Valand
+	Chalmers -- "Korsvägen"
+	Chalmers -- "Wavrinskys Plats"
+	Chalmers -- Kapellplatsen
+	"Grönsakstorget" -- Vasaplatsen
+	"Grönsakstorget" -- Hagakyrkan
+	"Vasa Viktoriagatan" -- Vasaplatsen
+	Valand -- Vasaplatsen
+	Kapellplatsen -- Vasaplatsen
+	"Handelshögskolan" -- "Vasa Viktoriagatan"
+	Brunnsgatan -- "Handelshögskolan"
+	Brunnsgatan -- Seminariegatan
+	"Högsbogatan" -- "Klintens Väg"
+	Godhemsgatan -- "Klintens Väg"
+	Godhemsgatan -- Mariaplan
+	Mariaplan -- Ostindiegatan
+	Mariaplan -- Marklandsgatan
+	Mariaplan -- Sannaplan
+	Ekedal -- Godhemsgatan
+	Ekedal -- Majvallen
+	Ostindiegatan -- "Vagnhallen Majorna"
+	Ostindiegatan -- Sannaplan
+	Jaegerdorffsplatsen -- "Vagnhallen Majorna"
+	"Chapmans Torg" -- Jaegerdorffsplatsen
+	"Chapmans Torg" -- Kaptensgatan
+	Kaptensgatan -- Stigbergstorget
+	Sanatoriegatan -- Solrosgatan
+	Sanatoriegatan -- Virginsgatan
+	Virginsgatan -- Welandergatan
+	Ejdergatan -- "Gamlestads Torg"
+	Ejdergatan -- Redbergsplatsen
+	Hammarkullen -- "Hjällbo"
+	Hammarkullen -- "Storås"
+	"Angered Centrum" -- "Storås"
+	"Töpelsgatan" -- Welandergatan
+	"Bögatan" -- "Töpelsgatan"
+	"Bögatan" -- Ekmanska
+	"Bäckeliden" -- Ekmanska
+	"Bäckeliden" -- "Sankt Sigfrids Plan"
+	"Liseberg Station" -- "Sankt Sigfrids Plan"
+	Frihamnen -- "Lilla Bommen"
+	Frihamnen -- "Hjalmar Brantingsplatsen"
+	Frihamnen -- Nordstan
+	"Hjalmar Brantingsplatsen" -- "Vågmästareplatsen"
+	"Vågmästareplatsen" -- Wieselgrensplatsen
+	Rambergsvallen -- Wieselgrensplatsen
+	"Gropegårdsgatan" -- Rambergsvallen
+	"Eketrägatan" -- "Gropegårdsgatan"
+	"Eketrägatan" -- "Sälöfjordsgatan"
+	"Sälöfjordsgatan" -- "Vårväderstorget"
+	"Mildvädersgatan" -- "Vårväderstorget"
+	"Mildvädersgatan" -- "Önskevädersgatan"
+	"Friskväderstorget" -- "Önskevädersgatan"
+	"Friskväderstorget" -- "Väderilsgatan"
+	Temperaturgatan -- "Väderilsgatan"
+	Temperaturgatan -- Varmfrontsgatan
+	Allhelgonakyrkan -- Aprilgatan
+	Allhelgonakyrkan -- "Kortedala Torg"
+	Allhelgonakyrkan -- Januarigatan
+	"Kortedala Torg" -- Runstavsgatan
+	"Nymånegatan" -- Runstavsgatan
+	"Beväringsgatan" -- "Nymånegatan"
+	"Beväringsgatan" -- Kviberg
+	Bellevue -- Kviberg
+	Bellevue -- SKF
+	Medicinaregatan -- "Wavrinskys Plats"
+	Medicinaregatan -- "Sahlgrenska Huvudentré"
+	Komettorget -- "Rymdtorget Spårvagn"
+	"Rymdtorget Spårvagn" -- Teleskopgatan
+	"Galileis Gata" -- Teleskopgatan
+	"Galileis Gata" -- Januarigatan
+	Sandarna -- Sannaplan
+	Kungssten -- Sandarna
+	Kungssten -- "Nya Varvsallén"
+	"Doktor Fries Torg" -- "Doktor Sydows Gata"
+	"Doktor Fries Torg" -- "Wavrinskys Plats"
+	"Roddföreningen" -- Saltholmen
+	"Långedrag" -- "Roddföreningen"
+	Hinsholmen -- "Långedrag"
+	Hinsholmen -- "Käringberget"
+	"Käringberget" -- Tranered
+	Hagen -- Tranered
+	Hagen -- "Nya Varvsallén"
+}
