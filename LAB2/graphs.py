@@ -67,11 +67,11 @@ class Graph:
             self._adjlist.pop(v, None)
         if v in self._valuelist:
             self._valuelist.pop(v, None)
-        for keys in self._adjlist.keys():
-            for item in list(self._adjlist[keys]):
-                if v == item:
-                    self._adjlist[keys].remove(item)
-                    self._valuelist[keys].remove(item)
+#        for keys in self._adjlist.keys():
+#            for item in list(self._adjlist[keys]):
+#                if v == item:
+#                    self._adjlist[keys].remove(item)
+#                    self._valuelist[keys].remove(item)
 
         
 
