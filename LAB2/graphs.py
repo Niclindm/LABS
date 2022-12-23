@@ -172,17 +172,20 @@ def visualize(graph, view='dot', name='mygraph', colors=None):
 
     for v in graph.vertices():
         if colors:
-            col = colors(v)
+            try:
+                col = colors(v)
+            except TypeError:
+                col = colors[v]
         else:
             col = 'white'
         dot.node(
             str(v),
             label=str(v),
             shape='rectangle',
-            fontsize='8pt',
-            width='0.4',
-            height='0.05',
-            fillcolor=col, style='filled'
+            fontsize='16pt',
+            width='0.8',
+            height='0.10',
+            fillcolor=col, style='filled',
             )
         
 
