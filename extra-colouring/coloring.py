@@ -2,7 +2,7 @@ import json
 import matplotlib
 import graphviz
 import sys
-sys.path.append('LAB2')
+sys.path.append('../LAB2')
 import graphs as gr
 
 def simplify(graph, n=4):
@@ -22,8 +22,6 @@ def simplify(graph, n=4):
 def rebuild(graph, stack, colors):
     colormap = dict()
     for v, neighbors in stack:
-        print(v)
-        print(neighbors)
         n = len(colors) - 1
         graph.add_vertex(str(v))
 
@@ -46,7 +44,6 @@ def rebuild(graph, stack, colors):
 def viz_color_graph(source, colors):
     n = len(colors)
     stack = simplify(source, n)
-    print(stack)
     colormap = rebuild(source, stack, colors)
     gr.visualize(source, colors=colormap)
 
