@@ -57,18 +57,14 @@ def color_svg_map(colordict, infile=WHITEMAP_FILE, outfile=COLORMAP_FILE):
     tree = ET.parse(infile)
     root = tree.getroot()
 
-    # Iterate through all the path elements of the svg
+
     for path in root.iter("{http://www.w3.org/2000/svg}path"):
-        print(path)
-        # Get the country code
+
         country_code = path.get("id").upper()
-        # Get the color for the country code
         color = colordict.get(country_code)
         print(country_code, color)
-        # Set the 'fill' attribute of the path to the color
         path.set("style", f"fill:{color}")
 
-    # Write the modified SVG back to a file
     tree.write(outfile)
 
 
