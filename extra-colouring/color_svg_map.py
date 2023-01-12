@@ -1,14 +1,14 @@
 import json
 import sys
-sys.path.append('LAB2')
+sys.path.append('../LAB2')
 import graphs as gr
 import coloring as c
 import xml.etree.ElementTree as ET
 
-WHITEMAP_FILE = 'extra-colouring/data/whitemap.svg'
-COUNTRY_CODES_FILE = 'extra-colouring/data/country_codes.json'
-NEIGHBOR_FILE = 'extra-colouring/data/neighbors.json' 
-COLORMAP_FILE = 'extra-colouring/colormap.svg'
+WHITEMAP_FILE = 'data/whitemap.svg'
+COUNTRY_CODES_FILE = 'data/country_codes.json'
+NEIGHBOR_FILE = 'data/neighbors.json' 
+COLORMAP_FILE = 'colormap.svg'
 
 def get_neighbors(codefile=COUNTRY_CODES_FILE, neighborfile=NEIGHBOR_FILE):
     countries = {}
@@ -23,14 +23,14 @@ def get_neighbors(codefile=COUNTRY_CODES_FILE, neighborfile=NEIGHBOR_FILE):
     
     for code in codes:
         for neighb in neighbors:
-            if code['Code'] == 'RU-main' or code['Code'] == 'RU-Kaliningrad':
+            if code['Code'] == 'I' or code['Code'] == 'RU-Kaliningrad':
                 continue
             else:
                 if code['Name'] == neighb['countryLabel']:
                     countries[code['Code']] = {'Name': code['Name'], 'Neighbor' : []}
                     temp = set()
                     for cd in codes:
-                        if cd['Code'] == 'RU-main' or cd['Code'] == 'RU-Kaliningrad':
+                        if cd['Code'] == 'I' or cd['Code'] == 'RU-Kaliningrad':
                             continue
                         if cd['Name'] == neighb['neighborLabel']:
                             temp.add(cd['Code'])
@@ -38,19 +38,23 @@ def get_neighbors(codefile=COUNTRY_CODES_FILE, neighborfile=NEIGHBOR_FILE):
                     for i in list(temp):
                         if (i,code['Code']) not in adjlist:
                             adjlist.append((code['Code'],i))
+    adjlist.append(('RU-KALININGRAD','PL'))
+    adjlist.append(('RU-KALININGRAD','LT'))
+    countries['RU-KALININGRAD'] = {'Name': "Russia", 'Neighbor' : ["LT", "PL"]}
     adjlist = list(set(adjlist))
+
 
 
     return countries, adjlist
 
 def get_map_colors(neighbordict):
     G = gr.Graph(neighbordict)
-    colors = ['yellow', 'lightgreen', 'cyan', 'orange']
+    G.add_edge("GB", "IE") # added manualy, problem with not matching names in countrycode file and neighbors file
+    colors = ['black', 'red', 'grey', 'orange']
     n = len(colors)
     stack = c.simplify(G, n)
     colormap = c.rebuild(G, stack, colors)
-    colormap['RU-KALININGRAD'] = 'white'
-    colormap['RU-MAIN'] = 'white'
+    gr.visualize(G,colors=colormap)
     return colormap
 
 def color_svg_map(colordict, infile=WHITEMAP_FILE, outfile=COLORMAP_FILE):
@@ -61,10 +65,11 @@ def color_svg_map(colordict, infile=WHITEMAP_FILE, outfile=COLORMAP_FILE):
     for path in root.iter("{http://www.w3.org/2000/svg}path"):
 
         country_code = path.get("id").upper()
-        color = colordict.get(country_code)
-        print(country_code, color)
+        if country_code == "RU-MAIN":
+            color = colordict.get("RU")
+        else:
+            color = colordict.get(country_code)
         path.set("style", f"fill:{color}")
-
     tree.write(outfile)
 
 
