@@ -8,7 +8,6 @@ import graphs as gr
 def simplify(graph, n=4):
     stack = list()
     while graph.vertices():
-        num_vtx = len(graph.vertices())
         for v in graph.vertices():
             neighbors = graph.neighbors(v)
             if len(neighbors) < n:
@@ -16,8 +15,6 @@ def simplify(graph, n=4):
                 graph.remove_vertex(v)
                 for neighb in neighbors:
                     graph.remove_edge(v,neighb)
-        assert num_vtx != len(graph.vertices()), "Input graph cannot be simplyfied with n = {nn}".format(nn=n)
-
     return reversed(stack)
 
 
