@@ -15,6 +15,7 @@ def simplify(graph, n=4):
                 graph.remove_vertex(v)
                 for neighb in neighbors:
                     graph.remove_edge(v,neighb)
+
     return reversed(stack)
 
 
